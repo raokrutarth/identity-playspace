@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+
+  # backend:
+  #   build:
+  #     context: .
+  #   image: iam-playspace-be:latest
+  #   volumes:
+  #     - type: bind
+  #       source: /dev/urandom
+  #       target: /dev/random
+  #       read_only: true
+  #   depends_on:
+  #     - redis
+  #     - postgres
+  #   restart: "unless-stopped"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:17.0.0
+    command: start-dev
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=${KC_ADMIN_PWD:-GlnwgBQhp_pO_QkS}
+    ports:
+      - "127.0.0.1:18080:8080"
+
+  postgres:
+    hostname: postgres
+    image: postgres:13
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_DB=iam-playspace
+      - POSTGRES_USER=iamp-be
+      - POSTGRES_PASSWORD=${PG_PWD:-n4Tz5ee1JpD3H0OM8wnI3A}
+      - PGDATA=/var/lib/postgresql/data
+    volumes:
+      - rdb-data:/var/lib/postgresql/data
+    ports:
+      - 127.0.0.1:15432:5432
+    restart: unless-stopped
+
+  redis:
+    hostname: redis
+    image: redis:6.2.6-alpine
+    command:
+      [
+        "redis-server",
+        "--requirepass",
+        "T614_qPiiqbGtVeRkzu-aw"
+      ]
+    ports:
+      - 127.0.0.1:16379:6379
+    restart: unless-stopped
+
+volumes:
+  rdb-data: {}
