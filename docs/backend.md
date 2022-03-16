@@ -38,6 +38,8 @@ TODO - explain main building blocks and maintain resources.
 - Auth servers/IDPs
   - Keycloak <https://www.keycloak.org/>
     - <https://github.com/thomasdarimont/awesome-keycloak>
+    - sp feature list demo <https://www.youtube.com/watch?v=duawSV69LDI>
+    - YT playlist with features <https://www.youtube.com/playlist?list=PLPZal7ksxNs0mgScrJxrggEayV-TPZ9sA>
     - docker quickstart <https://www.keycloak.org/getting-started/getting-started-docker>
     - Flask plus keycloak <https://github.com/houmie/sso>
     - User role mapping <https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/>
@@ -91,6 +93,7 @@ TODO - explain main building blocks and maintain resources.
   - starlett middleware and context:
     - <https://github.com/tomwojcik/starlette-context>
 - JWT live playground API <https://github.com/dwyl/learn-json-web-tokens>
+- quick flask jwt auth <https://stribny.name/blog/2018/10/flask-api-quickstart-application-with-json-web-tokens-sqlalchemy-and-pytest/>
 - Very basic authorize and call back endpoint example <https://github.com/tanveer941/Oauth2.0-demo/blob/master/app.py>
 - Oauth best practices RFC <https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-16>
 
