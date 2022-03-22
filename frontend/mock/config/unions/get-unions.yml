@@ -1,0 +1,46 @@
+request:
+  method: GET
+  path: /unions
+control:
+  # to test UI loading features
+  delay: "2s"
+response:
+  statusCode: 200
+  headers:
+    Content-Type:
+      - "application/json"
+    Access-Control-Allow-Origin:
+      - "*"
+    Cross-Origin-Resource-Policy:
+      - same-site
+  body: >
+    [
+        {
+            "id": "{{fake.UUID}}",
+            "name": "{{fake.Product}} Workers Union",
+            "notes": "{{fake.Paragraph}}",
+            "days": [
+                {{fake.Int(6)}},
+                {{fake.Int(6)}}
+            ],
+            "location": {
+              "city": "{{fake.City}}",
+              "country": "{{fake.Country}}",
+              "street": "{{fake.StreetAddress}}"
+            }
+        },
+        {
+            "id": "{{fake.UUID}}",
+            "name": "{{fake.Product}} Workers Union",
+            "notes": "{{fake.Paragraph}}",
+            "days": [
+                {{fake.Int(6)}},
+                {{fake.Int(6)}}
+            ],
+            "location": {
+              "city": "{{fake.City}}",
+              "country": "{{fake.Country}}",
+              "street": "{{fake.StreetAddress}}"
+            }
+        }
+    ]

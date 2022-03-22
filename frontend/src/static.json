@@ -1,0 +1,91 @@
+{
+    "unions": [
+        {
+            "id": 3,
+            "name": "Game Workers Union",
+            "notes": "Video games",
+            "sessions": [
+                0,
+                2,
+                4
+            ],
+            "days": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Meat Packers Union",
+            "notes": "PA/VA area meat district union.",
+            "sessions": [
+                0
+            ],
+            "days": [
+                0,
+                6
+            ]
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "Mark",
+            "img": "user1.png",
+            "title": "Envisioning Sculptor",
+            "notes": "With the company for 15 years, Mark has consistently…"
+        }
+    ],
+    "proposals": [
+        {
+            "id": 1,
+            "union": 3,
+            "name": "Change Work start time",
+            "notes": "Work starts at 9:30 am",
+            "days": [
+                0,
+                4
+            ]
+        },
+        {
+            "id": 2,
+            "union": 3,
+            "name": "Add medical clinic on factory floor",
+            "notes": "New medical clinics to be constructed.",
+            "days": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 23,
+            "union": 3,
+            "name": "More Vacation time",
+            "notes": "Increase annual vacation time to 40 days.",
+            "days": [
+                6,
+                5
+            ]
+        }
+    ],
+    "sessions": [
+        "Breakfast",
+        "Morning",
+        "Lunch",
+        "Afternoon",
+        "Evening"
+    ],
+    "days": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ]
+}

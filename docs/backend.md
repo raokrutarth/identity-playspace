@@ -40,6 +40,8 @@ TODO - explain main building blocks and maintain resources.
     - <https://github.com/thomasdarimont/awesome-keycloak>
     - sp feature list demo <https://www.youtube.com/watch?v=duawSV69LDI>
     - YT playlist with features <https://www.youtube.com/playlist?list=PLPZal7ksxNs0mgScrJxrggEayV-TPZ9sA>
+    - admin rest api demo <https://www.youtube.com/watch?v=jjHBJNlBLBU>
+    - devoxx demo sp <https://www.youtube.com/watch?v=RupQWmYhrLA>
     - docker quickstart <https://www.keycloak.org/getting-started/getting-started-docker>
     - Flask plus keycloak <https://github.com/houmie/sso>
     - User role mapping <https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/>
@@ -74,6 +76,7 @@ TODO - explain main building blocks and maintain resources.
     - Limited free tier functionality.
   - <https://aws.amazon.com/cognito/>
   - <https://cloud.google.com/identity-platform/pricing>
+  - open LDAP <https://github.com/osixia/docker-openldap#quick-start>
 - SDK based auth: <https://supertokens.com/docs/thirdpartyemailpassword/quick-setup/video-tutorial>
 - Authorization Code & Client Credentials diagrams sp:
   - <https://fusionauth.io/learn/expert-advice/oauth/modern-guide-to-oauth>
@@ -92,6 +95,7 @@ TODO - explain main building blocks and maintain resources.
   - Setting cookie: <https://github.com/hkiang01/fastapi-keycloak-oidc-auth/blob/master/app/main.py>
   - starlett middleware and context:
     - <https://github.com/tomwojcik/starlette-context>
+- Flask jwt lib with decorator <https://flask-jwt-extended.readthedocs.io/en/stable/basic_usage/>
 - JWT live playground API <https://github.com/dwyl/learn-json-web-tokens>
 - quick flask jwt auth <https://stribny.name/blog/2018/10/flask-api-quickstart-application-with-json-web-tokens-sqlalchemy-and-pytest/>
 - Very basic authorize and call back endpoint example <https://github.com/tanveer941/Oauth2.0-demo/blob/master/app.py>
