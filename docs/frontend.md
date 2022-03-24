@@ -59,6 +59,45 @@
 
   - Use case: When used with local storage and `useState`, can persist selection across reloads.
 
+- `useRef`
+  - Used to managed state of a component when re-rendering is not needed.
+  - Generally not preffered since design is to let react manage state as much as possible.
+  - Any time `useRef` is used to manage variables that control when rendering is done, look closer.
+  - For `const ref = useRef(initialValue);`, `ref.current;` can be modified to store the new value.
+  - Can be used to manipulate elements like buttons.
+  - E.g.
+  
+    ```js
+        const myRef = useRef(); 
+        ...
+        return (
+        <button ref={myRef}>Click Me!</button> 
+        );
+        ...
+        myRef.current.focus(); // to focus on the button 
+    ```
+
+  - Components using this style of state modification are called `uncontrolled` and should be used minimally.
+
+- Application state.
+  - `PropTypes` for managing the types of props sent by the parent.
+
+    ```js
+        import PropTypes from 'prop-types'
+
+        function HelloWorldComponent({ name }) {
+        return (
+            <div>Hello, {name}</div>
+        )
+        }
+
+        HelloWorldComponent.propTypes = {
+        name: PropTypes.string
+        }
+    ```
+
+  - Pass the `dispatch()` or `set...()` function as a dependency in the `useEffect` of the child.
+
 ## Resources
 
 ### Pending
@@ -88,3 +127,9 @@
   - Transpilation. I.e. converting newer JS features to downward-compatible code.
   - Bundeling (e.g. Parcel) converts app and css to one file each.
   - esbuild: golang implemented fast JS bundler.
+- CSS frameworks and rankings.
+  - <https://2021.stateofcss.com/en-US/technologies/css-frameworks>
+    - Rising: tailwind, standard: bootstrap.
+  - pros & cons.
+    - <https://dev.to/samlan/best-css-frameworks-for-2022-1afm>
+    - <https://dev.to/theme_selection/best-css-frameworks-in-2020-1jjh>
