@@ -1,10 +1,14 @@
-import React from "react"
+
 import { useState, useEffect } from "react";
-import { FaSpinner } from "react-icons/fa";
+import M from "materialize-css";
 
 export default function UnionsPicker() {
 
     const [unions, setUnions] = useState(null)
+
+    useEffect(() => {
+        M.AutoInit();
+    }, [unions]);
 
     useEffect(() => {
 
@@ -34,8 +38,16 @@ export default function UnionsPicker() {
 
     if (unions === null) {
         return (
-            <span>
-                <FaSpinner className="icon-loading" />
+            <span className="preloader-wrapper small active">
+                <div className="spinner-layer spinner-red-only">
+                    <div className="circle-clipper left">
+                        <div className="circle"></div>
+                    </div><div className="gap-patch">
+                        <div className="circle"></div>
+                    </div><div className="circle-clipper right">
+                        <div className="circle"></div>
+                    </div>
+                </div>
             </span>
         )
     }
@@ -53,5 +65,6 @@ export default function UnionsPicker() {
             ))
             }
         </select >
+
     );
 }

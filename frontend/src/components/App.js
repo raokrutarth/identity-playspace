@@ -6,9 +6,10 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import M from "materialize-css";
+import { useEffect } from "react";
 
 import { FaCalendarAlt, FaDoorOpen, FaUsers } from "react-icons/fa";
-import React, { Component } from 'react';
 
 import ProposalsPage from "./Proposals/ProposalsPage";
 import UnionsPage from "./Unions/UnionsPage";
@@ -16,34 +17,44 @@ import UnionsPicker from "./Unions/UnionsPicker";
 import UsersPage from "./Users/UsersPage";
 
 export default function App() {
+
+    useEffect(() => {
+        M.AutoInit();
+    }, []);
+
     return (
         <Router>
             <div className="App">
                 <header>
                     <nav>
-                        <ul>
-                            <li>
-                                <Link to="/proposals" className="btn btn-header">
-                                    <FaCalendarAlt />
-                                    <span>Proposals</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/unions" className="btn btn-header">
-                                    <FaDoorOpen />
-                                    <span>Unions</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/users" className="btn btn-header">
-                                    <FaUsers />
-                                    <span>Members</span>
-                                </Link>
-                            </li>
-                        </ul>
+                        <div className="nav-wrapper row">
+                            <span className="right col s4"><UnionsPicker /></span>
+
+                            <ul id="nav-mobile" className="left col hide-on-med-and-down">
+                                <li>
+                                    <Link to="/proposals">
+                                        <FaCalendarAlt />
+                                        <span>Proposals</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/unions">
+                                        <FaDoorOpen />
+                                        <span>Unions</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/users">
+                                        <FaUsers />
+                                        <span>Members</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
                     </nav>
-                    <UnionsPicker />
                 </header>
+
                 <Routes>
                     <Route path="/proposals" element={<ProposalsPage />} />
                     <Route path="/unions" element={<UnionsPage />} />

@@ -19,10 +19,10 @@ services:
   mock-be:
     image: jordimartin/mmock
     command:
-      - -config-path
-      - /etc/mock-config
+      - -config-path=/etc/mock-config
+      - -server-statistics=false
     volumes:
-      - ./mock/config:/etc/mock-config:ro
+      - ./frontend/mock/config:/etc/mock-config:ro
     ports:
       - "127.0.0.1:18083:8083"
     restart: unless-stopped

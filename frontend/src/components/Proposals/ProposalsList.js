@@ -1,10 +1,9 @@
 import { useState, Fragment, useEffect } from "react";
-import React from "react"
-import { proposals, days } from "../../static.json";
+import staticData from "../../static.json";
 
-export default function ProposalsList() {
+function ProposalsList() {
     const union = 3;
-    const proposalsInUnion = proposals.filter(b => b.union === union);
+    const proposalsInUnion = staticData.proposals.filter(b => b.union === union);
     const [proposalIndex, setProposalIndex] = useState(0);
     const proposal = proposalsInUnion[proposalIndex];
 
@@ -53,7 +52,7 @@ export default function ProposalsList() {
                             <ul>
                                 {proposal.days
                                     .sort()
-                                    .map(d => <li key={d}>{days[d]}</li>)
+                                    .map(d => <li key={d}>{staticData.days[d]}</li>)
                                 }
                             </ul>
                         </div>
@@ -64,3 +63,5 @@ export default function ProposalsList() {
 
     );
 }
+
+export default ProposalsList;

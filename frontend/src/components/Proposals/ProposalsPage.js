@@ -1,4 +1,4 @@
-import React from "react"
+
 import ProposalsList from "./ProposalsList";
 
 export default function ProposalsPage() {

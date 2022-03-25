@@ -86,9 +86,9 @@
         import PropTypes from 'prop-types'
 
         function HelloWorldComponent({ name }) {
-        return (
-            <div>Hello, {name}</div>
-        )
+            return (
+                <div>Hello, {name}</div>
+            )
         }
 
         HelloWorldComponent.propTypes = {
@@ -97,6 +97,9 @@
     ```
 
   - Pass the `dispatch()` or `set...()` function as a dependency in the `useEffect` of the child.
+
+- `useCallback`
+  - **Infinite loop caution**: passing a function `f()` to a child as a prop and `f()` internally uses a `set...()` function from a `useState` return value. `f()` keeps getting redefined and the child keeps getting re-rendered.
 
 ## Resources
 
